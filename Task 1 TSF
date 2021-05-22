@@ -1,3 +1,7 @@
+# simple linear regression
+# Objective:-To predict the score of student based on the no.of study hours.
+# Reading the data.
+
 ur1="http://bit.ly/w-data"
 data_s<-read.csv(ur1)
 head(data_s)
@@ -11,6 +15,12 @@ y<-data_s$Scores
 plot(x,y,xlab="Hours studied",ylab="percentage Scored",main="Hours Vs Percentage")
 
 cor(x,y)
+
+
+# The correlation coefficient is 0.9761907,which indicates the strong positive correlation.
+
+#Preparing the data
+
 
 dt<-sort(sample(nrow(data_s)*0.8))
 data_train=data_s[dt,]
@@ -51,6 +61,9 @@ data_p
 
 #Predicting scores of a Student who studied for 9.25 hours/day.
 
+h=data.frame(Hours=9.25)
+Predicted_Score=predict (model,h)
+Predicted_Scores
 
 #Result
 
